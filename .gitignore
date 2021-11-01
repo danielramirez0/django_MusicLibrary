@@ -130,3 +130,5 @@ dmypy.json
 
 # Project Direction Files
 /zDocs
+
+# Local settings files
