@@ -41,7 +41,9 @@ class SongDetail(APIView):
 
     def put(self, request, id):
         song = self.get_object(id)
-        serializer = SongSerializer(song, data=request.data)
+        if 'like' in request.GET:
+            song.increment_like()
+        serializer = SongSerializer(song, request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
