@@ -132,3 +132,4 @@ dmypy.json
 /zDocs
 
 # Local settings files
+.DS_Store
